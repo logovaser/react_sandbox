@@ -21,7 +21,7 @@ const Footer = () => {
                          activeClassName="active">Lang</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
+                <a className="nav-link" href="javascript:void(0);">Link</a>
             </li>
         </ul>
     );
