@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "react-redux": "^5.0.7",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2"
   }
 }
