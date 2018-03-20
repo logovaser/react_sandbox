@@ -23,21 +23,6 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.2"
   },
-  "jest": {
-    "projects": [
-      {
-        "displayName": "jsdom",
-        "testEnvironment": "jsdom",
-        "testMatch": [
-          "<rootDir>/**/*.spec.js"
-        ],
-        "transform": {
-          "^.+\\.(js|jsx)$": "babel-jest",
-          "^(?!.*\\.(js|jsx|json)$)": "<rootDir>/config/jest/cssTransform.js"
-        }
-      }
-    ]
-  },
   "babel": {
     "presets": [
       "react-app"
