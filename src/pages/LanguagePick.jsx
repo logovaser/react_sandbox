@@ -1,17 +1,14 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import LanguageList from "../base/LanguageList";
+import LanguageList from "../components/LanguageList";
 
 class LanguagePick extends Component {
     render() {
         return (
-            <div>
+            <div className="container">
                 <LanguageList/>
             </div>
         );
     }
 }
-
-LanguagePick.propTypes = {};
 
 export default LanguagePick;

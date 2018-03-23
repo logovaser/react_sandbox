@@ -8,8 +8,18 @@ import Home from "../pages/Home";
 import Header from "./Header";
 import Footer from "./Footer";
 import LanguagePick from "../pages/LanguagePick";
+import {requestLanguages} from "../redux/languages";
+import {connect} from "react-redux";
+import PartnerSearch from "../pages/PartnerSearch";
+import Chat from "../pages/Chat";
 
 class App extends Component {
+
+    componentDidMount = () => {
+        const {dispatch} = this.props;
+        dispatch(requestLanguages());
+    };
+
     render() {
         return (
             <Router>
@@ -17,10 +27,10 @@ class App extends Component {
                     <Header/>
 
                     <div className="col">
-                        <div className="container">
-                            <Route exact path="/" component={Home}/>
-                            <Route path="/languages" component={LanguagePick}/>
-                        </div>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/languages" component={LanguagePick}/>
+                        <Route path="/partner_search" component={PartnerSearch}/>
+                        <Route path="/chat/:id" component={Chat}/>
                     </div>
 
                     <div className="container">
@@ -32,4 +42,8 @@ class App extends Component {
     }
 }
 
-export default App;
+const mapStateToProps = state => ({
+    languages: state.languages,
+});
+
+export default connect(mapStateToProps)(App);

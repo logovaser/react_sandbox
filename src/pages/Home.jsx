@@ -1,16 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import InstantChat from "../components/InstantChat";
+import {connect} from "react-redux";
+import {formatNumber} from "../helpers";
 
-const Home = props => {
-    return (
-        <div>
+class Home extends Component {
 
-        </div>
-    );
-};
+    render() {
+        let {languages} = this.props;
 
-Home.propTypes = {
+        return <div className='row'>
+            {languages.data.filter(lang => lang.selected).map(lang => (
+                <div className='col-xs-12 col-sm-6 col-md-4'
+                     key={lang.id}>
+                    <InstantChat
+                        name={lang.name}
+                        description={`${formatNumber(lang.speakerCount)} speakers`}/>
+                </div>
+            ))}
+        </div>;
+    }
+}
 
-};
+function mapStateToProps(state) {
+    return {
+        languages: state.languages,
+    }
+}
 
-export default Home;
+export default connect(
+    mapStateToProps,
+)(Home);
