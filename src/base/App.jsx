@@ -15,6 +15,8 @@ import Chat from "../pages/Chat";
 
 class App extends Component {
 
+    state = {};
+
     componentDidMount = () => {
         const {dispatch} = this.props;
         dispatch(requestLanguages());
